@@ -37,21 +37,7 @@
 5.  **Restart/Reload:**
     * Restart your server, or use a plugin manager to load `FriendSystem`.
 
-## ⚙️ Configuration
 
-The `config.yml` file allows you to define your MongoDB connection:
-
-```yaml
-# config.yml located in plugins/FriendSystem/
-
-mongodb:
-  uri: "mongodb://localhost:27017" # REQUIRED: Your MongoDB connection URI.
-                                   # Example for a local MongoDB: "mongodb://localhost:27017"
-                                   # Example for a remote MongoDB Atlas: "mongodb+srv://user:password@cluster.mongodb.net/retryWrites=true&w=majority"
-  database: "friendsDB"           # REQUIRED: The name of the database where FriendSystem data will be stored.
-                                   # Ensure there is a space after the colon for both 'uri:' and 'database:'.
-
-```
 ## 🎮 Commands
 
 This section details all available commands. All commands are open for all players by default.
