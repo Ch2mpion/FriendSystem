@@ -337,21 +337,19 @@ public class PlayersManager {
      *
      * @param player1Id The UUID of the first player.
      * @param player2Id The UUID of the second player.
-     * @return true if friendship was removed/updated, false if player data not found in cache.
      */
-    public boolean removeFriend(UUID player1Id, UUID player2Id) {
+    public void removeFriend(UUID player1Id, UUID player2Id) {
         PlayerData data1 = playerDataByUUID.get(player1Id);
         PlayerData data2 = playerDataByUUID.get(player2Id);
 
         if (data1 == null || data2 == null) {
             friendSystem.getLogger().warning("Attempted to remove friends but PlayerData not found for one or both in cache: " + player1Id + ", " + player2Id);
-            return false;
+            return;
         }
 
         data1.removeFriend(player2Id);
         data2.removeFriend(player1Id);
         friendSystem.getLogger().fine(data1.getName() + " and " + data2.getName() + " are no longer friends (in-memory).");
-        return true;
     }
 
     /**
