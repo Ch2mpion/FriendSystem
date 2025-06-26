@@ -1,0 +1,3 @@
+name: FriendSystem
+version: '${version}'
+main: org.ch2mpion.friendsystem.FriendSystem
