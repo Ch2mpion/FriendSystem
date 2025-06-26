@@ -314,21 +314,19 @@ public class PlayersManager {
      *
      * @param player1Id The UUID of the first player.
      * @param player2Id The UUID of the second player.
-     * @return true if friendship was established/updated, false if player data not found in cache.
      */
-    public boolean addFriend(UUID player1Id, UUID player2Id) {
+    public void addFriend(UUID player1Id, UUID player2Id) {
         PlayerData data1 = playerDataByUUID.get(player1Id);
         PlayerData data2 = playerDataByUUID.get(player2Id);
 
         if (data1 == null || data2 == null) {
             friendSystem.getLogger().warning("Attempted to add friends but PlayerData not found for one or both in cache: " + player1Id + ", " + player2Id);
-            return false;
+            return;
         }
 
         data1.addFriend(player2Id);
         data2.addFriend(player1Id);
         friendSystem.getLogger().fine(data1.getName() + " and " + data2.getName() + " are now friends (in-memory).");
-        return true;
     }
 
     /**
