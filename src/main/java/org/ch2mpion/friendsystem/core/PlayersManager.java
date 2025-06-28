@@ -270,6 +270,8 @@ public class PlayersManager {
     /**
      * Cleans up expired friend requests from the in-memory store.
      * Notifies players if they are online.
+     * Note : this method is deprecated , the bungeecord version will use caffeine / Individual runTaskLater ( to avoid bad memory usage )
+                      But it's kept because a spigot server will never reach the same pressure as bungeecord
      */
     public void cleanUpExpiredRequests() {
         Instant now = Instant.now();
