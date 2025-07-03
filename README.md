@@ -1,4 +1,4 @@
-# FriendSystem 👥
+# Spigot-Friends 👥
 
 **A simple and efficient friends system for your Spigot Minecraft server, built using the [Imperat](https://github.com/VelixDevelopments/Imperat) command framework, and powered by MongoDB for persistent player data.**
 
